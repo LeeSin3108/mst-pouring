@@ -184,31 +184,27 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            The redundancy of multiple perceptual modalities provides reliability for human operation
+             in complex environments. For the first time, we propose an attention-guided 
+             multimodal sense action strategy that enables robots to reliably complete manipulation tasks 
+             in dynamic and complex perceptual environments.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            Our approach develops a Multimodal Sense Transformer(MST) to learn the relevance between tasks and
+            independently encoded modality-specific features across different stages. It adaptively extracts 
+            task-critical information from different modalities within noise, 
+            then transmits the integrated multisensory features to a Diffusion Model-based action generation head 
+            to produce corresponding action sequences for robot execution. With the architecture of MST in 
+            multisensory integration, we have achieved visualization of its visual and auditory attention,
+            through which we observe that applying appropriate mask to multimodal perceptions during training 
+            enables MST to better learn task-relevant perceptual attention, thereby enhancing the model's 
+            operational reliability in complex and dynamic perceptual environments.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Finally, we evaluated our approach on a robot water-pouring task. Experimental results demonstrate that, 
+            compared to vision-only methods and simple concatenation of visual-audio features, 
+            our method exhibits more reliable task completion capabilities across normal perceptual conditions, 
+            visually occluded scenarios, and acoustically interfered environments.
           </p>
         </div>
       </div>
@@ -237,7 +233,7 @@
           <div class="column is-full-width">
             <p>
               Strategy with Multimodal Sense Transformer (MST) is able to perceive the 
-              completion of the pouring action through  both visual and auditory perception
+              completion of the pouring action through both visual and auditory perception
               at different initial water levels, thus ending the pouring action.
             </p>
           </div>
