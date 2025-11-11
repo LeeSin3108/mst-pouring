@@ -50,7 +50,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <!-- <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://keunhong.com">
       <span class="icon">
@@ -58,7 +58,7 @@
       </span>
       </a>
 
-      <!-- <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More Research
         </a>
@@ -76,10 +76,10 @@
             PhotoShape
           </a>
         </div>
-      </div> -->
+      </div>
     </div>
 
-  </div>
+  </div> -->
 </nav>
 
 
@@ -366,46 +366,62 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Attention Visualize</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <!-- No Perception Interference -->
+        <h3 class="title is-4">No Perception Interference</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            In normal scenarios without perception interference, MST attention is
+            more focused on visual perception and less on auditory perception.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+        <div class="columns is-vcentered is-centered interpolation-panel">
+          <div class="column is-four-fifths">
+            <img src="./static/images/Atten_norm.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <!-- Visual Occlusion -->
+        <h3 class="title is-4">Visual Occlusion</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            In the scenarios where visual is obstructed , MST attention is
+            more focused on auditory perception and less on visual perception.
+          </p>
+        </div>
+        <div class="columns is-vcentered is-centered interpolation-panel">
+          <div class="column is-four-fifths">
+            <img src="./static/images/Atten_vis_occ.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+          </div>
+        </div>
+        <br/>
+        <!-- Audio Noise -->
+        <h3 class="title is-4">Audio Noise</h3>
+        <div class="content has-text-justified">
+          <p>
+            Under noisy conditions that interfere with hearing, 
+            MST allocates attentional resources to the visual domain, 
+            while the audio part prioritizes the most behaviorally relevant information.
+          </p>
+        </div>
+        <div class="columns is-vcentered is-centered interpolation-panel">
+          <div class="column is-four-fifths">
+            <img src="./static/images/Atten_audio_noise.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+          </div>
+        </div>
+        <br/>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Attention Shifts</h3>
+        <div class="content has-text-justified">
+          <p>
+            This video shows how MST shifts attention between visual and auditory perception
+            when facing different types of perception interference during the pouring task.
           </p>
         </div>
         <div class="content has-text-centered">
@@ -415,7 +431,7 @@
                  preload
                  playsinline
                  width="75%">
-            <source src="./static/videos/replay.mp4"
+            <source src="./static/videos/visualize_attention.mp4"
                     type="video/mp4">
           </video>
         </div>
